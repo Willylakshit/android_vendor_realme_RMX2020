@@ -1621,7 +1621,7 @@ PRODUCT_PACKAGES += \
     libem_audio_jni \
     libem_support_jni \
     vendor.mediatek.hardware.audio@5.1 \
-    libwifi-hal \
+    libwifi-hal-mtk \
     EngineerMode \
     EmCamera \
     SensorHub \
