@@ -100,6 +100,23 @@ cc_prebuilt_library_shared {
 	prefer: true,
 }
 
+cc_prebuilt_library_shared {
+	name: "libwifi-hal",
+	owner: "realme",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libwifi-hal.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
 android_app_import {
 	name: "EngineerMode",
 	owner: "realme",
@@ -137,6 +154,24 @@ prebuilt_etc_xml {
 	name: "android.hardware.neuralnetworks@1.3-service-mtk-gpu",
 	owner: "realme",
 	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "android.hardware.wifi.hostapd",
+	owner: "realme",
+	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "wpa_supplicant",
+	owner: "realme",
+	src: "proprietary/vendor/etc/vintf/manifest/wpa_supplicant.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
